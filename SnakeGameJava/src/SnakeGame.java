@@ -1,3 +1,13 @@
+/**
+ * This is a simplified version of the classic Snake game, written in Java.
+ *
+ * The main idea of developing this game was to practice the Java programming language.
+ *
+ * @author Aurelio Rodrigues
+ * @version 1.0
+ * @since 2023-10-10
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +16,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
-
+/**
+ * Main class of the game
+ */
 public class SnakeGame extends JPanel implements ActionListener {
     private final int WIDTH = 600;
     private final int HEIGHT = 350;

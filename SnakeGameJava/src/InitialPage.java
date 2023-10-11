@@ -1,3 +1,13 @@
+/**
+ * This is a simplified version of the classic Snake game, written in Java.
+ *
+ * The main idea of developing this game was to practice the Java programming language.
+ *
+ * @author Aurelio Rodrigues
+ * @version 1.0
+ * @since 2023-10-10
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,8 +18,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class InitialPage extends JPanel {
-    private final int WIDTH = 600;
-    private final int HEIGHT = 350;
+    private final int WIDTH = 600; // Width of the menu
+    private final int HEIGHT = 350; // Height of the menu
+
 
     public InitialPage() {
         initUI();
@@ -19,23 +30,22 @@ public class InitialPage extends JPanel {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setLayout(new BorderLayout());
 
-        // Carregue a imagem de fundo do menu
+        // Load the background image
         BufferedImage backgroundImage = loadImage("C:\\My Applications\\JavaApplications\\SnakeGameJava\\img\\Snake_Menu.jpg");
 
         if (backgroundImage != null) {
             JLabel backgroundLabel = new JLabel(new ImageIcon(backgroundImage));
             add(backgroundLabel);
         } else {
-            // Imagem não encontrada, adicione um painel simples como backup
-            add(new JLabel("Snake Game - Menu"));
+            add(new JLabel("Snake Game - Menu - by Aurelio Rodrigues"));
         }
 
-        // Crie um painel para os botões de menu
+        // Creating a panel to add the buttons, using JPanel
         JPanel buttonPanel = new JPanel();
         buttonPanel.setOpaque(false);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        // Adicione os botões de menu
+        // Adding the buttons to the panel
         JButton playButton = new JButton("Play");
         JButton instructionsButton = new JButton("Instructions");
         JButton developerButton = new JButton("Developer");
@@ -44,7 +54,7 @@ public class InitialPage extends JPanel {
         buttonPanel.add(instructionsButton);
         buttonPanel.add(developerButton);
 
-        // Ação do botão Play para iniciar o jogo
+        // Play button action to start the game
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,7 +62,7 @@ public class InitialPage extends JPanel {
             }
         });
 
-        // Ação do botão Instructions para mostrar as instruções
+        // Instruction button action to show the instructions
         instructionsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,7 +70,7 @@ public class InitialPage extends JPanel {
             }
         });
 
-        // Ação do botão Developer para mostrar informações sobre você
+        // Developer button action to show the developer info
         developerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,20 +100,16 @@ public class InitialPage extends JPanel {
     }
 
     private void showInstructions() {
-        // Implemente a lógica para mostrar as instruções aqui
-        // Você pode criar uma nova janela ou substituir o conteúdo na mesma janela.
-        // Por exemplo, você pode usar um JOptionPane para mostrar as instruções em uma caixa de diálogo.
+        // To be implemented
     }
 
     private void showDeveloperInfo() {
-        // Implemente a lógica para mostrar informações sobre você aqui
-        // Você pode criar uma nova janela ou substituir o conteúdo na mesma janela.
-        // Por exemplo, você pode usar um JOptionPane para mostrar informações sobre você em uma caixa de diálogo.
+        // To be implemented
     }
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            JFrame frame = new JFrame("Snake Game - Menu");
+            JFrame frame = new JFrame("Snake Game - Menu - by Aurelio Rodrigues");
             InitialPage initialPage = new InitialPage();
             frame.add(initialPage);
             frame.pack();
